@@ -21,7 +21,7 @@ while ($data = mysql_fetch_assoc($datas)) {
 						<li>
 				            <img src="layout/images/slider/<?php echo $s['image'] ?>" alt="image06"/>
 				            <div class="description">
-                                <h2 class=""><a href="" class=""><?php echo $s['description'] ?></a></h2>
+                                <h1 class=""><a href="" class=""><?php echo $s['description'] ?></a></h1>
                             </div>
 				        </li>
 				    <?php endforeach ?>

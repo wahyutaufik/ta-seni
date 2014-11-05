@@ -19,7 +19,7 @@ p.dashboard { margin: 0 0 10px; padding: 5px; border: 1px solid; border-radius: 
 legend.dashboard { text-align: center; border-bottom: 1px solid #C3C3C3; }
 .header-logo {text-decoration: none; color: #3B880E;}
 .description { position: absolute; width: 100%; background: url(../images/overlay.png) repeat; bottom: 0; padding: 30px; }
-.description h2 a { color: white; text-decoration: none;}
+.description h1 a { color: white; text-decoration: none;}
 
 
 /* start editing from here */
