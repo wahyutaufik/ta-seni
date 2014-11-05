@@ -111,20 +111,20 @@ $module = $_GET['module'];
 					<li <?php if ($_GET['module']=='dashboard'){echo "class='active'";} ?>>
 						<a href="index.php?module=dashboard">Dashboard</a>
 					</li>
-					<li <?php if ($_GET['module']=='pelanggan_list'||$_GET['module']=='tambah_pelanggan'||$_GET['module']=='edit_pelanggan'||$_GET['module']=='hapus_pelanggan'||$_GET['module']=='detail_pelanggan'){echo "class='active'";} ?>>
-						<a href="index.php?module=pelanggan_list">pelanggan</a>
+					<li <?php if ($_GET['module']=='listPelanggan'||$_GET['module']=='addPelanggan'||$_GET['module']=='updatePelanggan'||$_GET['module']=='deletePelanggan'||$_GET['module']=='detailPelanggan'){echo "class='active'";} ?>>
+						<a href="index.php?module=listPelanggan">pelanggan</a>
 						</li>
-					<li <?php if ($_GET['module']=='pesanan_list'||$_GET['module']=='tambah_pesanan'||$_GET['module']=='edit_pesanan'||$_GET['module']=='hapus_pesanan'||$_GET['module']=='detail_pesanan'){echo "class='active'";} ?>>
-						<a href="index.php?module=pesanan_list">pesanan</a>
+					<li <?php if ($_GET['module']=='listPesanan'||$_GET['module']=='addPesanan'||$_GET['module']=='updatePesanan'||$_GET['module']=='deletePesanan'||$_GET['module']=='detailPesanan'){echo "class='active'";} ?>>
+						<a href="index.php?module=listPesanan">pesanan</a>
 						</li>
 					<li <?php if ($_GET['module']=='listProduk'||$_GET['module']=='addProduk'||$_GET['module']=='updateProduk'||$_GET['module']=='deleteProduk'||$_GET['module']=='detailProduk'){echo "class='active'";} ?>>
 						<a href="index.php?module=listProduk">produk</a>
 						</li>
-					<li <?php if ($_GET['module']=='kategori_list'||$_GET['module']=='tambah_kategori'||$_GET['module']=='edit_kategori'||$_GET['module']=='hapus_kategori'||$_GET['module']=='detail_kategori'){echo "class='active'";} ?>>
-						<a href="index.php?module=kategori_list">kategori</a>
+					<li <?php if ($_GET['module']=='listKategori'||$_GET['module']=='addKategori'||$_GET['module']=='updateKategori'||$_GET['module']=='deleteKategori'||$_GET['module']=='detailKategori'){echo "class='active'";} ?>>
+						<a href="index.php?module=listKategori">kategori</a>
 					</li>
-					<li <?php if ($_GET['module']=='admin_list'||$_GET['module']=='tambah_admin'||$_GET['module']=='edit_admin'||$_GET['module']=='hapus_admin'||$_GET['module']=='detail_admin'){echo "class='active'";} ?>>
-						<a href="index.php?module=admin_list">Admin</a>
+					<li <?php if ($_GET['module']=='listAdmin'||$_GET['module']=='addAdmin'||$_GET['module']=='updateAdmin'||$_GET['module']=='deleteAdmin'||$_GET['module']=='detailAdmin'){echo "class='active'";} ?>>
+						<a href="index.php?module=listAdmin">Admin</a>
 					</li>
 					<div class="clear"></div>
 				</ul>
@@ -135,21 +135,18 @@ $module = $_GET['module'];
 			<nav id="menu-left">
 				<ul>
 					<li><a href="index.php?module=dashboard">dashboard</a></li>
-					<li><a href="index.php?module=pelanggan_list">pelanggan</a></li>
-					<li><a href="index.php?module=pesanan_list">pesanan</a></li>
-					<li><a href="index.php?module=produk_list">produk</a></li>
-					<li><a href="index.php?module=kategori_list">kategori</a></li>
-					<li><a href="index.php?module=admin_list">admin</a></li>
-					<li>
-						<a href="index.php?module=konfirmasi_list">konfirmasi</a>
-					</li>
+					<li><a href="index.php?module=listPelanggan">pelanggan</a></li>
+					<li><a href="index.php?module=listPesanan">pesanan</a></li>
+					<li><a href="index.php?module=listProduk">produk</a></li>
+					<li><a href="index.php?module=listKategori">kategori</a></li>
+					<li><a href="index.php?module=listAdmin">admin</a></li>
 					<div class="clear"></div>
 				</ul>
 			</nav>
 			<div class="header_right">
 				<ul>
 					<li>
-						<a href="index.php?module=pesanan_list">
+						<a href="index.php?module=listPesanan">
 							<i  class="cart"></i>
 							<span>30</span>
 						</a>

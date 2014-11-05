@@ -6,27 +6,6 @@ while ($data = mysql_fetch_assoc($result)) {
 	$newer[] = $data;
 }
 ?>
-<!-- start image1_of_3 -->
-<div class="top_bg">
-	<div class="wrap">
-		<div class="main1">
-			<div class="image1_of_3">
-				<img src="layout/images/img1.jpg" alt=""/>
-			    <a href="details.html"><span class="tag">on sale</span></a>
-			</div>
-			<div class="image1_of_3">
-				<img src="layout/images/img2.jpg" alt=""/>
-				<a href="details.html"><span class="tag">special offers</span></a>
-			</div>
-			<div class="image1_of_3">
-				<img src="layout/images/img3.jpg" alt=""/>
-				<a href="details.html"><span class="tag">must have</span></a>
-			</div>
-			<div class="clear"></div>
-		</div>
-	</div>
-</div>
-<!-- start main -->
 <div class="main_bg">
 	<div class="wrap">
 		<div class="main">
