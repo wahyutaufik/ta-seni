@@ -4,10 +4,13 @@ require 'config/flash_info.php';
 require 'config/auto_space.php';
 session_start();
 $user = array();
+$module = array();
 if (!empty($_SESSION)) {
 	$user = $_SESSION['username'];
 }
-$module = $_GET['module'];
+if (!empty($_GET)) {
+	$module = $_GET['module'];
+}
 
 ?>
 <!DOCTYPE html>
@@ -70,16 +73,16 @@ $module = $_GET['module'];
 		<?php if ($user != 'admin'): ?>
 			<div class="menu">
 				<ul>
-					<li <?php if ($_GET['module']=='home'){echo "class='active'";} ?>>
+					<li <?php if ($module=='home'){echo "class='active'";} ?>>
 						<a href="index.php?module=home">Home</a>
 					</li>
-					<li <?php if ($_GET['module']=='produk'){echo "class='active'";} ?>>
+					<li <?php if ($module=='produk'){echo "class='active'";} ?>>
 						<a href="index.php?module=produk">produk</a>
 					</li>
-					<li <?php if ($_GET['module']=='tentang'){echo "class='active'";} ?>>
+					<li <?php if ($module=='tentang'){echo "class='active'";} ?>>
 						<a href="index.php?module=tentang">tentang</a>
 					</li>
-					<li <?php if ($_GET['module']=='contact_us'){echo "class='active'";} ?>>
+					<li <?php if ($module=='contact_us'){echo "class='active'";} ?>>
 						<a href="index.php?module=contact_us">Contact</a>
 					</li>
 					<div class="clear"></div>
@@ -88,7 +91,7 @@ $module = $_GET['module'];
 			<div id="smart_nav">
 				<a class="navicon" href="#menu-left"> </a>
 			</div>
-			<?php if ($_GET['module'] != "register"): ?>
+			<?php if ($module != "register"): ?>
 			<nav id="menu-left">
 				<ul>
 					<li><a href="index.php?module=home">Home</a></li>
@@ -108,22 +111,22 @@ $module = $_GET['module'];
 		<?php else: ?>
 			<div class="menu">
 				<ul>
-					<li <?php if ($_GET['module']=='dashboard'){echo "class='active'";} ?>>
+					<li <?php if ($module=='dashboard'){echo "class='active'";} ?>>
 						<a href="index.php?module=dashboard">Dashboard</a>
 					</li>
-					<li <?php if ($_GET['module']=='listPelanggan'||$_GET['module']=='addPelanggan'||$_GET['module']=='updatePelanggan'||$_GET['module']=='deletePelanggan'||$_GET['module']=='detailPelanggan'){echo "class='active'";} ?>>
+					<li <?php if ($module=='listPelanggan'||$module=='addPelanggan'||$module=='updatePelanggan'||$module=='deletePelanggan'||$module=='detailPelanggan'){echo "class='active'";} ?>>
 						<a href="index.php?module=listPelanggan">pelanggan</a>
 						</li>
-					<li <?php if ($_GET['module']=='listPesanan'||$_GET['module']=='addPesanan'||$_GET['module']=='updatePesanan'||$_GET['module']=='deletePesanan'||$_GET['module']=='detailPesanan'){echo "class='active'";} ?>>
+					<li <?php if ($module=='listPesanan'||$module=='addPesanan'||$module=='updatePesanan'||$module=='deletePesanan'||$module=='detailPesanan'){echo "class='active'";} ?>>
 						<a href="index.php?module=listPesanan">pesanan</a>
 						</li>
-					<li <?php if ($_GET['module']=='listProduk'||$_GET['module']=='addProduk'||$_GET['module']=='updateProduk'||$_GET['module']=='deleteProduk'||$_GET['module']=='detailProduk'){echo "class='active'";} ?>>
+					<li <?php if ($module=='listProduk'||$module=='addProduk'||$module=='updateProduk'||$module=='deleteProduk'||$module=='detailProduk'){echo "class='active'";} ?>>
 						<a href="index.php?module=listProduk">produk</a>
 						</li>
-					<li <?php if ($_GET['module']=='listKategori'||$_GET['module']=='addKategori'||$_GET['module']=='updateKategori'||$_GET['module']=='deleteKategori'||$_GET['module']=='detailKategori'){echo "class='active'";} ?>>
+					<li <?php if ($module=='listKategori'||$module=='addKategori'||$module=='updateKategori'||$module=='deleteKategori'||$module=='detailKategori'){echo "class='active'";} ?>>
 						<a href="index.php?module=listKategori">kategori</a>
 					</li>
-					<li <?php if ($_GET['module']=='listAdmin'||$_GET['module']=='addAdmin'||$_GET['module']=='updateAdmin'||$_GET['module']=='deleteAdmin'||$_GET['module']=='detailAdmin'){echo "class='active'";} ?>>
+					<li <?php if ($module=='listAdmin'||$module=='addAdmin'||$module=='updateAdmin'||$module=='deleteAdmin'||$module=='detailAdmin'){echo "class='active'";} ?>>
 						<a href="index.php?module=listAdmin">Admin</a>
 					</li>
 					<div class="clear"></div>
