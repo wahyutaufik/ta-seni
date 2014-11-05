@@ -20,6 +20,9 @@ while ($data = mysql_fetch_assoc($datas)) {
 				    <?php foreach ($slide as $k => $s): ?>
 						<li>
 				            <img src="layout/images/slider/<?php echo $s['image'] ?>" alt="image06"/>
+				            <div class="description">
+                                <h2 class=""><a href="" class=""><?php echo $s['description'] ?></a></h2>
+                            </div>
 				        </li>
 				    <?php endforeach ?>
 			    <?php endif ?>
