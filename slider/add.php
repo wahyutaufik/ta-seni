@@ -1,4 +1,3 @@
-<?php $modulecase = substr(strstr(strtolower(preg_replace('/\B([A-Z])/', ' $1', $module)), " "), 1); ?>
 <form action="index.php?module=simpan" method="POST" enctype="multipart/form-data">
 	<input type="hidden" name="id" value="">
 	<input type="hidden" name="module" value="<?php echo $modulecase ?>">

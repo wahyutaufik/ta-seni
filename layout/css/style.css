@@ -15,7 +15,7 @@ table{border-collapse:collapse;border-spacing:0;}
 /*--dashboard--*/
 .alert { cursor: pointer; }
 .menu-navigator { margin-bottom: 50px; }
-p.dashboard { margin: 0 0 10px; padding: 5px; border: 1px solid; border-radius: 5px; margin-top: 5px; background-color: rgb(212, 36, 36); color: #fff; }
+p.dashboard { margin: 0 0 10px; padding: 5px; border: 1px solid; border-radius: 5px; margin-top: 5px; background-color: green; color: #fff; text-decoration: none; }
 legend.dashboard { text-align: center; border-bottom: 1px solid #C3C3C3; }
 .header-logo {text-decoration: none; color: #3B880E;}
 .description { position: absolute; width: 100%; background: url(../images/overlay.png) repeat; bottom: 0; padding: 30px; }
@@ -116,7 +116,7 @@ h4.style{
 }
 .login_left h3{
 	font-size: 1.2em;
-	color: #57C5A0;
+	color: #3B880E;
 	text-transform: uppercase;
 	text-shadow: 0 1px 0 white;
 	border-bottom: 1px solid #E9E9E9;
@@ -149,8 +149,8 @@ h4.style{
 	-o-border-radius: 2px;
 }
 .btn form input[type="button"]:hover,.registration_form input[type="submit"]:hover{
-	background: #57C5A0;
-	border: 1px solid #57c5a0;
+	background: #3B880E;
+	border: 1px solid #3B880E;
 }
 /* start registration */
 .registration{
@@ -329,11 +329,16 @@ h4.style{
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 }
+
+.menu ul li.active{
+	background: #3B880E;
+}
 .menu ul li.active a{
-	color:#3B880E;
+	color:#FFF;
 }
 .menu ul li a:hover{
 	color:#3B880E;
+	text-decoration: none;
 }
 /* start header_right */
 .header_right{
@@ -484,18 +489,19 @@ h4.style{
 .grid1_of_3{
 	float:left;
 	width:30.3333%;
-	margin-left:4.3333%;
+	margin-left: 25px;
+	margin-top: 25px;
 	background: #ffffff;
 	position: relative;
 }
-.grid1_of_3:first-child{
+/*.grid1_of_3:first-child{
 	margin-left: 0;
-}
+}*/
 .grid1_of_3 a{
 	display: block;
 }
 .grid1_of_3 a:hover h3{
-	color: #57C5A0;
+	color: #3B880E;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
@@ -514,7 +520,7 @@ h4.style{
 	text-transform: capitalize;
 }
 .price{
-	background: #57C5A0;
+	background: #3B880E;
 	color: #ffffff;
 	font-size: 0.8725em;
 	padding: 25px 12px;
@@ -599,7 +605,7 @@ h4.style{
 .date1 h4{
 	font-size: 0.8925em;
 	margin-top: 4px;
-	background:#57C5A0;
+	background:#3B880E;
 	padding: 15px;
 	text-transform: uppercase;
 	color: #ffffff;
@@ -617,7 +623,7 @@ h4.style{
 	transition: all 0.3s ease-in-out;
 }
 .date_text  h4 a:hover{
-	color: #57C5A0;
+	color: #3B880E;
 }
 /* start footer_top */
 .footer_top{
@@ -656,7 +662,7 @@ h4.style{
 	margin-top: 2%;
 }
 .span1_of_3 p a{
-	color: #57C5A0;
+	color: #3B880E;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
@@ -892,8 +898,8 @@ p.para{
 	-o-border-radius: 2px;
 }
 .read_more a:hover{
-	background: #57C5A0;
-	border: 1px solid #57c5a0;
+	background: #3B880E;
+	border: 1px solid #3B880E;
 }
 /* start blog */
 /*--project--*/
@@ -1144,7 +1150,7 @@ ul.sidebar li a:hover{
 }
 ul.news li .date{
 	float: left;
-	background: #57C5A0;
+	background: #3B880E;
 	margin-right: 20px;
 	font-size: 1em;
 	color: #FFF;
@@ -1230,7 +1236,7 @@ ul.news li .desc h4 a:hover{
 .meter > span {
 	display: block;
 	height: 100%;
-	background: #57C5A0;
+	background: #3B880E;
 	-webkit-box-shadow: inset 0 2px 9px  rgba(255,255,255,0.3),inset 0 -2px 6px rgba(0,0,0,0.4);
 	-moz-box-shadow:  inset 0 2px 9px  rgba(255,255,255,0.3),  inset 0 -2px 6px rgba(0,0,0,0.4);
 	-o-box-shadow:  inset 0 2px 9px  rgba(255,255,255,0.3), inset 0 -2px 6px rgba(0,0,0,0.4);
@@ -1452,8 +1458,8 @@ ul.news li .desc h4 a:hover{
 	-o-border-radius: 2px;
 }
 .contact-form input[type="submit"]:hover{
-	background: #57C5A0;
-	border: 1px solid #57c5a0;
+	background: #3B880E;
+	border: 1px solid #3B880E;
 }
 /*-- start details--*/
 .single{
@@ -1476,7 +1482,7 @@ ul.news li .desc h4 a:hover{
 	padding: 10px;
 	text-transform: capitalize;
 	color: #ffffff;
-	background: #57C5A0;
+	background: #3B880E;
 	line-height: 1.8em;
 	display: block;
 	-webkit-transition: all 0.3s ease-in-out;
@@ -1528,12 +1534,12 @@ ul.news li .desc h4 a:hover{
 	transition: all 0.3s ease-in-out;
 }
 .left_text p a:hover{
-	color: #57C5A0;
+	color: #3B880E;
 }
 .left_text span{
 	display:block;
 	margin-top:8px;
-	color: #57C5A0;
+	color: #3B880E;
 }
 .left_text span.line{
 	text-decoration:line-through;
@@ -1725,8 +1731,8 @@ span.color7{
 	-o-border-radius: 2px;
 }
 .btn_form form input[type="submit"]:hover{
-	background: #57C5A0;
-	border: 1px solid #57c5a0;
+	background: #3B880E;
+	border: 1px solid #3B880E;
 }
 /* end description */
 /* start left_content_btm */

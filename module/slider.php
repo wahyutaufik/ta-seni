@@ -1,5 +1,4 @@
 <?php  
-require_once "config/koneksi.php";
 $query = "SELECT * FROM slider";
 $datas = mysql_query($query);
 while ($data = mysql_fetch_assoc($datas)) {

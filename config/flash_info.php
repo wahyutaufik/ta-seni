@@ -2,20 +2,22 @@
 
 function flash()
 {
-	$message = $_GET['message'];
+	if (isset($_GET['message'])) {
+		$message = $_GET['message'];
 	
-	if ($message == "login") {
-		echo login(); 
-	} elseif ($message == "success") {
-		echo success();
-	} elseif ($message == "failed") {
-		echo failed();
-	} elseif ($message == "added") {
-		echo added();
-	} elseif ($message == "updated") {
-		echo updated();
-	} elseif ($message == "deleted") {
-		echo deleted();
+		if ($message == "login") {
+			echo login(); 
+		} elseif ($message == "success") {
+			echo success();
+		} elseif ($message == "failed") {
+			echo failed();
+		} elseif ($message == "added") {
+			echo added();
+		} elseif ($message == "updated") {
+			echo updated();
+		} elseif ($message == "deleted") {
+			echo deleted();
+		}
 	}
 }
 

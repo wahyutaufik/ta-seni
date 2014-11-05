@@ -3,7 +3,10 @@ include 'config/koneksi.php';
 require 'config/flash_info.php';
 require 'config/auto_space.php';
 session_start();
-$user = $_SESSION['username'];
+$user = array();
+if (!empty($_SESSION)) {
+	$user = $_SESSION['username'];
+}
 $module = $_GET['module'];
 
 ?>
@@ -44,7 +47,7 @@ $module = $_GET['module'];
 			</div>
 			 <div class="log_reg">
 				<ul>
-					<?php if (is_null($user)): ?>
+					<?php if (empty($user)): ?>
 						<li><a href="index.php?module=login">Login</a> </li>
 						<div class="clear"></div>
 					<?php else: ?>
@@ -82,27 +85,26 @@ $module = $_GET['module'];
 					<div class="clear"></div>
 				</ul>
 			</div>
-				
-				<div id="smart_nav">
-					<a class="navicon" href="#menu-left"> </a>
-				</div>
-				<?php if ($_GET['module'] != "register"): ?>
-				<nav id="menu-left">
-					<ul>
-						<li><a href="index.php?module=home">Home</a></li>
-						<li><a href="index.php?module=produk">produk</a></li>
-						<li><a href="index.php?module=tentang">tentang</a></li>
-						<li><a href="index.php?module=contact_us">Contact</a></li>
-						<div class="clear"></div>
-					</ul>
-				</nav>
-				<?php endif ?>
-				<div class="header_right">
-					<ul>
-						<li><a href="#"><i  class="cart"></i><span>20</span></a></li>
-					</ul>
-				</div>
-				<div class="clear"></div>
+			<div id="smart_nav">
+				<a class="navicon" href="#menu-left"> </a>
+			</div>
+			<?php if ($_GET['module'] != "register"): ?>
+			<nav id="menu-left">
+				<ul>
+					<li><a href="index.php?module=home">Home</a></li>
+					<li><a href="index.php?module=produk">produk</a></li>
+					<li><a href="index.php?module=tentang">tentang</a></li>
+					<li><a href="index.php?module=contact_us">Contact</a></li>
+					<div class="clear"></div>
+				</ul>
+			</nav>
+			<?php endif ?>
+			<div class="header_right">
+				<ul>
+					<li><a href="#"><i  class="cart"></i><span>20</span></a></li>
+				</ul>
+			</div>
+			<div class="clear"></div>
 		<?php else: ?>
 			<div class="menu">
 				<ul>
@@ -115,8 +117,8 @@ $module = $_GET['module'];
 					<li <?php if ($_GET['module']=='pesanan_list'||$_GET['module']=='tambah_pesanan'||$_GET['module']=='edit_pesanan'||$_GET['module']=='hapus_pesanan'||$_GET['module']=='detail_pesanan'){echo "class='active'";} ?>>
 						<a href="index.php?module=pesanan_list">pesanan</a>
 						</li>
-					<li <?php if ($_GET['module']=='barang_list'||$_GET['module']=='tambah_barang'||$_GET['module']=='edit_barang'||$_GET['module']=='hapus_barang'||$_GET['module']=='detail_barang'){echo "class='active'";} ?>>
-						<a href="index.php?module=barang_list">barang</a>
+					<li <?php if ($_GET['module']=='listProduk'||$_GET['module']=='addProduk'||$_GET['module']=='updateProduk'||$_GET['module']=='deleteProduk'||$_GET['module']=='detailProduk'){echo "class='active'";} ?>>
+						<a href="index.php?module=listProduk">produk</a>
 						</li>
 					<li <?php if ($_GET['module']=='kategori_list'||$_GET['module']=='tambah_kategori'||$_GET['module']=='edit_kategori'||$_GET['module']=='hapus_kategori'||$_GET['module']=='detail_kategori'){echo "class='active'";} ?>>
 						<a href="index.php?module=kategori_list">kategori</a>
@@ -124,9 +126,6 @@ $module = $_GET['module'];
 					<li <?php if ($_GET['module']=='admin_list'||$_GET['module']=='tambah_admin'||$_GET['module']=='edit_admin'||$_GET['module']=='hapus_admin'||$_GET['module']=='detail_admin'){echo "class='active'";} ?>>
 						<a href="index.php?module=admin_list">Admin</a>
 					</li>
-					<!-- <li<?php //if ($_GET['module']=='konfirmasi'){echo "class='active'";} ?>>
-						<a href="index.php?module=konfirmasi">konfirmasi</a>
-					</li> -->
 					<div class="clear"></div>
 				</ul>
 			</div>
@@ -138,7 +137,7 @@ $module = $_GET['module'];
 					<li><a href="index.php?module=dashboard">dashboard</a></li>
 					<li><a href="index.php?module=pelanggan_list">pelanggan</a></li>
 					<li><a href="index.php?module=pesanan_list">pesanan</a></li>
-					<li><a href="index.php?module=barang_list">barang</a></li>
+					<li><a href="index.php?module=produk_list">produk</a></li>
 					<li><a href="index.php?module=kategori_list">kategori</a></li>
 					<li><a href="index.php?module=admin_list">admin</a></li>
 					<li>
@@ -177,7 +176,7 @@ $module = $_GET['module'];
 				<ul>
 					<li><a href="index.php?module=home">home</a></li>
 					<li><a href="index.php?module=contact_us">Contact us</a></li>
-					<?php if (is_null($user) && $user!='admin'): ?>
+					<?php if (empty($user) && $user!='admin'): ?>
 						<li><a href="index.php?module=login_admin">Administrator</a></li>
 					<?php endif ?>
 				</ul>

@@ -3,7 +3,6 @@ require_once "config/get_data.php";
 ?>
 <?php foreach ($datas as $key => $s): ?>
 	<form action="index.php?module=update" method="POST" enctype="multipart/form-data">
-		<input type="hidden" name="id" value="">
 		<input type="hidden" name="module" value="<?php echo $modulecase ?>">
 		<div class="form-group">
 			<label>Gambar*</label>
