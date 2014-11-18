@@ -5,7 +5,7 @@ $password = $_POST['password'];
 $password = base64_encode($password);
 $username = mysql_real_escape_string($username);
 $password = mysql_real_escape_string($password);
-$login    = mysql_query("SELECT username FROM user WHERE username='$username' and password='$password'");
+$login    = mysql_query("SELECT username FROM admin WHERE username='$username' and password='$password'");
 
 $data     = mysql_fetch_array($login);
 $jumlahdata = mysql_num_rows($login);

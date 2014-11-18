@@ -22,12 +22,17 @@ $url = substr(strstr(strtolower(preg_replace('/\B([A-Z])/', ' $1', $module)), " 
 	                <tr class="odd gradeX">
 	                <?php  
 	                	if (isset($content['content'])) {
-	                		$content['content'] = '* detail';
+	                		$content['content'] = '*detail';
 	                	}
 	                	
 	                    if (isset($content['password'])) {
 	                        $content['password'] = '*hidden';
 	                    }
+
+	                    if (isset($content['id_pemesan'])) {
+	                        $content['id_pemesan'] = '*detail';
+	                    }
+
 	                    $id = $content['id'];
 	                    unset($content['id']);
 	                    $fill        = implode(",", $content);

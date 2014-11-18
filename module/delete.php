@@ -4,7 +4,7 @@ $modulecase = substr(strstr(strtolower(preg_replace('/\B([A-Z])/', ' $1', $modul
 ?>
 <form action="index.php?module=eraseFunction&id=<?php echo $id; ?>" method="POST">
 	<div class="form-group">
-		<h3>Sure want to delete this data?</h3>
+		<h3>Apakah Anda yakin ingin menghapus data ini?</h3>
 	</div>
 	<div>
 		<input type="hidden" name="module" value="<?php echo $modulecase ?>">

@@ -20,7 +20,7 @@ while ($data = mysql_fetch_assoc($result)) {
 				<?php else: ?>
 					<?php foreach ($newer as $key => $p): ?>
 					<div class="grid1_of_3">
-						<a href="details.html">
+						<a href="index.php?module=detailsProduk&id=<?php echo $p['id'] ?>">
 							<img height="260" width="186" src="layout/images/produk/<?php echo $p['image'] ?>" alt="">
 							<h3><?php echo $p['name'] ?></h3>
 							<span class="price">Rp <?php echo $p['price'] ?></span>

@@ -61,10 +61,13 @@ $query = sprintf('UPDATE %s SET %s WHERE %s',
 					implode(',', $vals),
 					$where
 				);
-mysql_query($query);
+$result = mysql_query($query);
+
+/*redirect*/ 
+if ($result) {
+	header('Location:index.php?module=list'.ucfirst($table).'&message=updated');
+} else {
+	header('Location:index.php?module=list'.ucfirst($table).'&message=error');
+}
 
 ?>
-<!-- redirect -->
-<script language="javascript">
-document.location='index.php?module=list<?php echo ucfirst($table) ?>&message=updated';
-</script>

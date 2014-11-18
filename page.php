@@ -8,6 +8,9 @@ switch($modul)
 {
 	/*--module--*/
 	case 'home'                       : include 'module/home.php'; break;
+	case 'detailsProduk'               : include 'module/details.php'; break;
+	case 'cart'               : include 'module/cart.php'; break;
+	case 'order'               : include 'module/order.php'; break;
 	case 'login'                      : include 'module/login.php'; break;
 	case 'cek_login'                  : include 'module/cek_login.php'; break;
 	case 'login_admin'                : include 'module/login_admin.php'; break;
@@ -32,10 +35,19 @@ switch($modul)
 	case 'addSlider'                  : include 'slider/add.php'; break;
 	case 'detailSlider'               : include 'slider/detail.php'; break;
 	case 'updateSlider'               : include 'slider/update.php'; break;
-
+	
 	/*-----produk-----*/
 	case 'addProduk'                  : include 'produk/add.php'; break;
 	case 'detailProduk'               : include 'produk/detail.php'; break;
 	case 'updateProduk'               : include 'produk/update.php'; break;
-
+	
+	/*-----admin-----*/
+	case 'addAdmin'                   : include 'admin/add.php'; break;
+	case 'detailAdmin'                : include 'admin/detail.php'; break;
+	case 'updateAdmin'                : include 'admin/update.php'; break;
+	
+	/*-----ketegori-----*/
+	case 'addKategori'                : include 'kategori/add.php'; break;
+	case 'detailKategori'             : include 'kategori/detail.php'; break;
+	case 'updateKategori'             : include 'kategori/update.php'; break;
 }

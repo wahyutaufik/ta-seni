@@ -52,10 +52,12 @@ if (mysql_num_rows($result) > 0) {
 
 /*----save----*/
 $query = "INSERT INTO $table($fields)VALUES ('$data')";
-mysql_query($query);
-?>
+$result = mysql_query($query);
 
-<!-- redirect -->
-<script language="javascript">
-document.location='index.php?module=list<?php echo ucfirst($table) ?>&message=added';
-</script>
+
+if ($result) {
+	header('Location:index.php?module=list'.ucfirst($table).'&message=added');
+} else {
+	header('Location:index.php?module=list'.ucfirst($table).'&message=error');
+}
+?>

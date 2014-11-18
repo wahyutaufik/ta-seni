@@ -3,6 +3,10 @@ require_once "config/get_data.php";
 ?>
 <?php foreach ($datas as $key => $s): ?>
 	<div class="form-group">
+		<label>Kategori :</label>
+		<?php echo $s['category'] ?>
+	</div>
+	<div class="form-group">
 		<label>Nama Produk :</label>
 		<?php echo $s['name'] ?>
 	</div>

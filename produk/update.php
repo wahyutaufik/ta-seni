@@ -1,10 +1,26 @@
 <?php 
 require_once "config/get_data.php";
+$sql         = "SELECT * FROM kategori";
+$kats       = mysql_query($sql);
+while ($cats = mysql_fetch_assoc($kats)) {
+	$kat[] = $cats;
+}
 ?>
 <?php foreach ($datas as $key => $s): ?>
 	<form action="index.php?module=update" method="POST" enctype="multipart/form-data">
 	    <input type="hidden" name="id" value="<?php echo $id ?>">
 		<input type="hidden" name="module" value="<?php echo $modulecase ?>">
+		<div class="form-group">
+			<label>Kategory*</label>
+			<select name="category" class="form-control">
+				<option value="">Pilih Kategori</option>
+				<?php foreach ($kat as $k => $kategori): ?>
+					<option value="<?php echo $kategori['value'] ?>" <?php if($kategori['value'] == $s['category']) {echo 'selected';}?>>
+						<?php echo $kategori['name'] ?>
+					</option>
+				<?php endforeach ?>
+			</select>
+		</div>
 		<div class="form-group">
 			<label>Nama Produk*</label>
 		    <input type="text" name="name" value="<?php echo $s['name'] ?>" placeholder="Nama Produk" autocomplete="off" class="form-control" required>

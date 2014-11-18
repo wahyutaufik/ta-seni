@@ -3,9 +3,9 @@ include 'config/koneksi.php';
 require 'config/flash_info.php';
 require 'config/auto_space.php';
 session_start();
-$user = array();
+$user   = array();
 $module = array();
-if (!empty($_SESSION)) {
+if (!empty($_SESSION['username'])) {
 	$user = $_SESSION['username'];
 }
 if (!empty($_GET)) {
@@ -20,11 +20,12 @@ if (!empty($_GET)) {
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link type="image/x-icon" href="layout/images/favicon.ico" rel="Shortcut icon">
 	<link href="layout/css/google.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="layout/css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="layout/css/jquery.mmenu.all.css" type="text/css" rel="stylesheet" />
 	<link href="layout/css/slider.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="layout/css/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="layout/css/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="layout/css/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="layout/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="layout/css/dataTables.bootstrap.css" rel="stylesheet">
 	<style>
 		ul, ol { margin-top: 0; margin-bottom: 0; }
 		label { display: block; }
@@ -104,7 +105,7 @@ if (!empty($_GET)) {
 			<?php endif ?>
 			<div class="header_right">
 				<ul>
-					<li><a href="#"><i  class="cart"></i><span>20</span></a></li>
+					<li><a href="index.php?module=cart"><?php include "cart_count.php" ?></a></li>
 				</ul>
 			</div>
 			<div class="clear"></div>
@@ -147,14 +148,7 @@ if (!empty($_GET)) {
 				</ul>
 			</nav>
 			<div class="header_right">
-				<ul>
-					<li>
-						<a href="index.php?module=listPesanan">
-							<i  class="cart"></i>
-							<span>30</span>
-						</a>
-					</li>
-				</ul>
+
 			</div>
 			<div class="clear"></div>
 		<?php endif ?>
@@ -191,10 +185,20 @@ if (!empty($_GET)) {
 
 <script type="text/javascript" src="layout/js/jquery.min.js"></script>
 <script type="text/javascript" src="layout/js/jquery.mmenu.js"></script>
+<script type="text/javascript" src="layout/js/dataTables/jquery.dataTables.js"></script>
+<script type="text/javascript" src="layout/js/dataTables/dataTables.bootstrap.js"></script>
 <script type="text/javascript" src="layout/js/jquery.eislideshow.js"></script>
 <script type="text/javascript" src="layout/js/easing.js"></script>
 <script type="text/javascript" src="layout/js/move-top.js"></script>
+<script type="text/javascript" src="layout/js/bootstrap.min.js"></script>
 <script type="text/javascript">
+    $(document).ready(function() {
+        $('#dataTables-example').dataTable();
+    });
+    $(".alert").click(function() {
+        $(this).addClass("hide");
+    });
+
 	$(function() {
 		$('nav#menu-left').mmenu();
 	});

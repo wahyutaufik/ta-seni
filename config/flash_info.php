@@ -13,6 +13,8 @@ function flash()
 			echo failed();
 		} elseif ($message == "added") {
 			echo added();
+		} elseif ($message == "error") {
+			echo error();
 		} elseif ($message == "updated") {
 			echo updated();
 		} elseif ($message == "deleted") {
@@ -49,6 +51,17 @@ function failed()
 		<div class='alert alert-danger'>
 			<center>
             	<b>Login gagal, silahkan ulangi dengan username dan password yang tepat.
+        	</center>
+        </div>
+    ";
+}
+
+function error()
+{
+	echo "
+		<div class='alert alert-danger'>
+			<center>
+            	<b>Data gagal ditambahkan, silahkan ulangi.
         	</center>
         </div>
     ";

@@ -7,7 +7,7 @@
 	</div>
 	<div class="form-group">
 		<label>Keterangan</label>
-	    <input type="text" name="name" value="" placeholder="Keterangan" autocomplete="off" class="form-control" required>
+	    <input type="text" name="description" value="" placeholder="Keterangan" autocomplete="off" class="form-control" required>
 	</div>
 	<div>
 		<input class="btn btn-primary" type="submit" value="Simpan">
