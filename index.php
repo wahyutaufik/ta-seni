@@ -3,6 +3,7 @@ include 'config/koneksi.php';
 require 'config/flash_info.php';
 require 'config/auto_space.php';
 require_once 'swiftmailer/lib/swift_required.php';
+require_once 'dompdf/dompdf_config.inc.php';
 session_start();
 $user   = array();
 $module = array();
