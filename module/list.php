@@ -3,9 +3,14 @@ require_once "config/tableHeader.php";
 require_once "config/tableContent.php";
 $url = substr(strstr(strtolower(preg_replace('/\B([A-Z])/', ' $1', $module)), " "), 1); 
 ?>
+
+<style type="text/css">
+	.hide {display: none;}
+</style>
+
 <div class="panel panel-default">
     <div class="panel-heading">
-		<a href="index.php?module=add<?php echo ucfirst($url); ?>" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah <?php echo ucfirst($url) ?></a>
+		<a href="index.php?module=add<?php echo ucfirst($url); ?>" class="btn btn-primary <?php if($module == 'listTentang' || $module == 'listPelanggan' || $module == 'listPesanan' || $module == 'listPembayaran') {echo "hide";} ?>"><i class="fa fa-plus"></i> Tambah <?php echo ucfirst($url) ?></a>
     </div>
     <div class="panel-body">
 	    <div class="table-responsive">
@@ -35,10 +40,8 @@ $url = substr(strstr(strtolower(preg_replace('/\B([A-Z])/', ' $1', $module)), " 
 
 	                    $id = $content['id'];
 	                    unset($content['id']);
-	                    $fill        = implode(",", $content);
-	                    $fillContent = explode(',', $fill);
 	                ?>
-	                <?php foreach ($fillContent as $key => $value): ?>
+	                <?php foreach ($content as $key => $value): ?>
 	                    <?php  
 							$length = 3;
 							$fills  = implode(' ', array_splice(explode(' ', $value),0, $length));

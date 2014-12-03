@@ -46,31 +46,16 @@ elseif ($input=='inputform'){
 	$ct_content = cart_content();
 	$jml = count($ct_content);
 	$now = date("Ymd");
+	$invoice_no = date('ymdhis');
 	for($i=0; $i<$jml; $i++){
-	mysql_query("INSERT INTO pemesanan(id,
-											name,
-											email,
-											phone,
-											address,
-											id_product,
-											jumlah,
-											tanggal,
-											id_pemesan) 
-									VALUES (NULL,
-											'$_POST[name]',
-											'$_POST[email]',
-											'$_POST[telp]',
-											'$_POST[address]',
-											{$ct_content[$i]['id_product']},
-											{$ct_content[$i]['qty']},
-											'$now',
-											'$sid')");
+	mysql_query("INSERT INTO pesanan(id, name, email, phone, address, id_product, jumlah, tanggal, id_pemesan, invoice_no) 
+				 VALUES (NULL, '$_POST[name]', '$_POST[email]', '$_POST[telp]', '$_POST[address]', {$ct_content[$i]['id_product']}, {$ct_content[$i]['qty']}, '$now', '$sid', '$invoice_no')");
 		}
 	for($i=0; $i<$jml; $i++){
 		mysql_query("DELETE FROM keranjang WHERE id_keranjang = {$ct_content[$i]['id_keranjang']}");
 		}
 		echo "<script>window.alert('Terima Kasih Pesanan Anda Sedang Kami Proses');
-        window.location=('index.php')</script>";
+        window.location=('index.php?module=conf_pdf')</script>";
 	}								
 												
 

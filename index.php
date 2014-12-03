@@ -3,7 +3,7 @@ include 'config/koneksi.php';
 require 'config/flash_info.php';
 require 'config/auto_space.php';
 require_once 'swiftmailer/lib/swift_required.php';
-require_once 'dompdf/dompdf_config.inc.php';
+require_once ('dompdf/dompdf_config.inc.php');
 session_start();
 $user   = array();
 $module = array();
@@ -88,6 +88,9 @@ if (!empty($_GET)) {
 					<li <?php if ($module=='contact_us'){echo "class='active'";} ?>>
 						<a href="index.php?module=contact_us">Contact</a>
 					</li>
+					<li <?php if ($module=='conf'){echo "class='active'";} ?>>
+						<a href="index.php?module=conf">Konfirmasi</a>
+					</li>
 					<div class="clear"></div>
 				</ul>
 			</div>
@@ -101,6 +104,7 @@ if (!empty($_GET)) {
 					<li><a href="index.php?module=produk">produk</a></li>
 					<li><a href="index.php?module=tentang">tentang</a></li>
 					<li><a href="index.php?module=contact_us">Contact</a></li>
+					<li><a href="index.php?module=conf">Konfirmasi</a></li>
 					<div class="clear"></div>
 				</ul>
 			</nav>
@@ -117,15 +121,15 @@ if (!empty($_GET)) {
 					<li <?php if ($module=='dashboard'){echo "class='active'";} ?>>
 						<a href="index.php?module=dashboard">Dashboard</a>
 					</li>
-					<li <?php if ($module=='listPelanggan'||$module=='addPelanggan'||$module=='updatePelanggan'||$module=='deletePelanggan'||$module=='detailPelanggan'){echo "class='active'";} ?>>
+					<!-- <li <?php if ($module=='listPelanggan'||$module=='addPelanggan'||$module=='updatePelanggan'||$module=='deletePelanggan'||$module=='detailPelanggan'){echo "class='active'";} ?>>
 						<a href="index.php?module=listPelanggan">pelanggan</a>
-						</li>
+					</li> -->
 					<li <?php if ($module=='listPesanan'||$module=='addPesanan'||$module=='updatePesanan'||$module=='deletePesanan'||$module=='detailPesanan'){echo "class='active'";} ?>>
 						<a href="index.php?module=listPesanan">pesanan</a>
-						</li>
+					</li>
 					<li <?php if ($module=='listProduk'||$module=='addProduk'||$module=='updateProduk'||$module=='deleteProduk'||$module=='detailProduk'){echo "class='active'";} ?>>
 						<a href="index.php?module=listProduk">produk</a>
-						</li>
+					</li>
 					<li <?php if ($module=='listKategori'||$module=='addKategori'||$module=='updateKategori'||$module=='deleteKategori'||$module=='detailKategori'){echo "class='active'";} ?>>
 						<a href="index.php?module=listKategori">kategori</a>
 					</li>
@@ -141,7 +145,7 @@ if (!empty($_GET)) {
 			<nav id="menu-left">
 				<ul>
 					<li><a href="index.php?module=dashboard">dashboard</a></li>
-					<li><a href="index.php?module=listPelanggan">pelanggan</a></li>
+					<!-- <li><a href="index.php?module=listPelanggan">pelanggan</a></li> -->
 					<li><a href="index.php?module=listPesanan">pesanan</a></li>
 					<li><a href="index.php?module=listProduk">produk</a></li>
 					<li><a href="index.php?module=listKategori">kategori</a></li>

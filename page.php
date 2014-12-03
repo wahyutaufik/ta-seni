@@ -19,6 +19,7 @@ switch($modul)
 	case 'cek_login_admin'            : include 'module/cek_login_admin.php'; break;
 	case 'register'                   : include 'module/register.php'; break;
 	case 'contact_us'                 : include 'module/contact.php'; break;
+	case 'post-contact'                 : include 'module/post-contact.php'; break;
 	case 'produk'                     : include 'module/products.php'; break;
 	case 'tentang'                    : include 'module/about.php'; break;
 	case 'dashboard'                  : include 'module/dashboard.php'; break;
@@ -50,4 +51,10 @@ switch($modul)
 	case 'addKategori'                : include 'kategori/add.php'; break;
 	case 'detailKategori'             : include 'kategori/detail.php'; break;
 	case 'updateKategori'             : include 'kategori/update.php'; break;
+
+	/*-----tentang-----*/
+	case 'detailTentang'             : include 'tentang/detail.php'; break;
+	case 'updateTentang'             : include 'tentang/update.php'; break;
+
+	case 'conf_pdf'             : include 'module/struk.php'; break;
 }
