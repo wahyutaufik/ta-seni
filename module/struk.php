@@ -12,8 +12,8 @@ while ($pes = mysql_fetch_assoc($pesanan)) {
 	@media print {
 		.top_bg { display: none; }
 		.header_btm { display: none; }
-		#print { display: none; }
 		.footer_bg { display: none; }
+		#print { display: none; }
 	}
 
 </style>
