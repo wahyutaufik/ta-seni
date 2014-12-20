@@ -15,7 +15,7 @@ while ($cats = mysql_fetch_assoc($kats)) {
 			<select name="category" class="form-control">
 				<option value="">Pilih Kategori</option>
 				<?php foreach ($kat as $k => $kategori): ?>
-					<option value="<?php echo $kategori['value'] ?>" <?php if($kategori['value'] == $s['category']) {echo 'selected';}?>>
+					<option value="<?php echo $kategori['value'] ?>" <?php if($kategori['value'] ==  $s['category']) {echo 'selected';}?>>
 						<?php echo $kategori['name'] ?>
 					</option>
 				<?php endforeach ?>
