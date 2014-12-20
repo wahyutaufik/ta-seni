@@ -28,12 +28,6 @@
 						else {
 							while($tian=mysql_fetch_assoc($sql)){
 								$det[] = $tian;
-								// echo"<tr><td>$no</td>
-								// 	<td><img width=50 src=foto/$tian[image]></td>
-								// 	<td>$tian[product_name]</td>
-								// 	<td>$tian[qty]</td>
-								// 	<td>$tian[price]</td>
-								// 	<td><a href=input.php?input=delete&id=$tian[id_keranjang]>Hapus</a></td></tr>";
 							}
 						}
 					?>
