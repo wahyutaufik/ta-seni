@@ -13,7 +13,7 @@ if (empty($_SESSION)||$_SESSION['sesi']!='admin') {
 	<span><label>Via Bank : </label><label><?php echo $data['via'] ?></label></span><br>
 </div>
 <div class="row-fluid">
-	<span><label>Rekening : </label><label><?php echo $data['Rekening'] ?></label></span><br>
+	<span><label>Rekening : </label><label><?php echo $data['rekening'] ?></label></span><br>
 </div>
 <div class="row-fluid">
 	<span><label>Tanggal Konfirmasi : </label><label><?php echo $data['tanggal'] ?></label></span><br>

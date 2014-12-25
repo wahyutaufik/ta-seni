@@ -14,6 +14,7 @@ if (empty($_SESSION)||$_SESSION['sesi']!='admin') {
 <div class="panel panel-default">
     <div class="panel-heading">
 		<a href="index.php?module=add<?php echo ucfirst($url); ?>" class="btn btn-primary <?php if($module == 'listTentang' || $module == 'listPelanggan' || $module == 'listPesanan' || $module == 'listPembayaran') {echo "hide";} ?>"><i class="fa fa-plus"></i> Tambah <?php echo ucfirst($url) ?></a>
+		<a href="index.php?module=report<?php echo ucfirst($url); ?>" class="btn btn-success" ><i class="fa fa-book"></i> Laporan Data <?php echo ucfirst($url) ?></a>
     </div>
     <div class="panel-body">
 	    <div class="table-responsive">

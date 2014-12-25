@@ -63,6 +63,12 @@ if (empty($_SESSION)||$_SESSION['sesi']!='admin') {
 					<p class="dashboard">Konfirmasi</p>
 				</a>
 			</div>
+			<div class="col-md-2" align="center">
+				<a href="index.php?module=listTransaksi">
+					<img src="layout/images/visa-icon.png" width="165px">
+					<p class="dashboard">Transaksi</p>
+				</a>
+			</div>
 		</div>
 	</div>
 </div>

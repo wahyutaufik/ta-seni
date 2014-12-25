@@ -29,6 +29,7 @@ switch($modul)
 	case 'dashboard'                  : include 'module/dashboard.php'; break;
 	case 'list'.ucfirst($modulecase)  : include 'module/list.php'; break;
 	case 'delete'.ucfirst($modulecase): include 'module/delete.php'; break;
+	case 'report'.ucfirst($modulecase): include 'module/report.php'; break;
 	
 	/*--config--*/
 	case 'password'                   : include 'config/change_password.php'; break;

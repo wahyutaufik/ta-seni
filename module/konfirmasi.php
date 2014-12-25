@@ -34,6 +34,10 @@
 						    	<span><input name="invoice_no" type="text" class="textbox" required></span>
 						    </div>
 						    <div>
+						    	<span><label>JUMLAH TRANSFER</label></span>
+						    	<span><input name="jumlah" type="text" class="textbox" required></span>
+						    </div>
+						    <div>
 						    	<span><label>BUKTI PEMBAYARAN</label></span>
 						    	<span><input name="image" type="file" class="textbox" required></span>
 						    	<span><input name="tanggal" type="hidden" class="textbox" required value="<?php echo date('Y-m-d') ?>"></span>
