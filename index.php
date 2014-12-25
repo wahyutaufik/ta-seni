@@ -21,12 +21,12 @@ if (!empty($_GET)) {
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link type="image/x-icon" href="layout/images/favicon.ico" rel="Shortcut icon">
 	<link href="layout/css/google.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="layout/css/jquery.mmenu.all.css" type="text/css" rel="stylesheet" />
+	<link href="layout/css/menu.css" type="text/css" rel="stylesheet" />
 	<link href="layout/css/slider.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="layout/css/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="layout/css/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="layout/css/style.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="layout/css/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="layout/css/dataTables.css" rel="stylesheet">
 	<style>
 		ul, ol { margin-top: 0; margin-bottom: 0; }
 		label { display: block; }
@@ -53,16 +53,17 @@ if (!empty($_GET)) {
 			 <div class="log_reg">
 				<ul>
 					<?php if (empty($user)): ?>
-						<li><a href="index.php?module=login">Login</a> </li>
-						<div class="clear"></div>
+						<!-- <li><a href="index.php?module=login">Login</a> </li> -->
+						<!-- <div class="clear"></div> -->
 					<?php else: ?>
 						<li><a href="index.php?module=logout">Logout</a> </li>								   
 					<?php endif ?>
 				</ul>
 			</div>	
 			<div class="web_search">
-			 	<form>
-					<input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+			 	<form method="GET">
+					<input type="hidden" name="module" value="produk">
+					<input name="q" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
 					<input type="submit" value=" " />
 				</form>
 		    </div>						

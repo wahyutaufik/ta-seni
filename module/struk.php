@@ -5,7 +5,7 @@ $pesanan = mysql_query($pesan);
 while ($pes = mysql_fetch_assoc($pesanan)) {
 	$pesa[] = $pes;
 }
-
+session_regenerate_id();
 ?>
 <style type="text/css">
 	
@@ -51,6 +51,12 @@ while ($pes = mysql_fetch_assoc($pesanan)) {
 				<?php echo $pesana['name']; ?><br>
 				-<br>
 				<?php echo $pesana['address']; ?><br>
+				<?php 
+				$prov = mysql_query("SELECT * FROM ongkir WHERE id=$pesana[provinsi_id]");
+				while ($provinsi = mysql_fetch_assoc($prov)) { 
+				?>
+				<?php echo $provinsi['provinsi']; ?><br>
+				<?php } ?>
 				<?php echo $pesana['phone'] ?>
 			</td>
 		</tr>
@@ -65,7 +71,7 @@ while ($pes = mysql_fetch_assoc($pesanan)) {
 			<td>Produk</td>
 			<td>Jumlah Beli</td>
 			<td>Harga Satuan</td>
-			<td>Total</td>
+			<td>Total (Rp)</td>
 		</tr>
 	</thead>
 	<tbody>
@@ -88,18 +94,43 @@ while ($pes = mysql_fetch_assoc($pesanan)) {
 			<td><?php echo $produ[$key]['name'] ?></td>
 			<td><?php echo $pesana2['jumlah'] ?></td>
 			<td><?php echo 'Rp '.$produ[$key]['price'] ?></td>
-			<td><?php echo 'Rp '.$produ[$key]['price']*$pesana2['jumlah'] ?></td>
+			<td align="right"><?php echo $produ[$key]['price']*$pesana2['jumlah'] ?></td>
 		</tr>
 		<?php $total += $produ[$key]['price']*$pesana2['jumlah']; ?> 
 		<?php endforeach ?>
 		<tr>
-			<td colspan="3" style="font-weight:bold; text-align:right;">Total&nbsp;&nbsp;&nbsp;&nbsp;</td>
-			<td colspan="3" style="font-weight:bold; "><?php echo 'Rp '.$total ?></td>
+			<td colspan="3" style="font-weight:bold; text-align:right;">Total Belanja&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td colspan="3" style="font-weight:bold; " align="right"><?php echo $total ?></td>
 		</tr>
+		<tr>
+		<?php  
+			$ongkir = mysql_query("SELECT * FROM ongkir WHERE id=$pesana2[provinsi_id]");
+			while ($ongkos = mysql_fetch_assoc($ongkir)) {
+		?>
+			<td colspan="3" style="font-weight:bold; text-align:right;">Ongkos Kirim&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td colspan="3" style="font-weight:bold; " align="right"><?php echo $ongkos['harga'] ?></td>
+		</tr>
+		<tr>
+			<td colspan="3" style="font-weight:bold; text-align:right;">Grand Total&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td colspan="3" style="font-weight:bold; " align="right"><?php echo 'Rp '.($total+$ongkos['harga']) ?></td>
+			<?php 
+			$total = ($total+$ongkos['harga']);
+			$invoice = $pesana['invoice_no'];
+			$inputTotal = "INSERT INTO `transaksi`(`id`, `invoice_no`, `total_bayar`) VALUES (NULL, $invoice, $total)";
+			mysql_query($inputTotal);
+			?>
+		</tr>
+		<?php } ?>
 	</tbody>
 </table>
 <?php endforeach ?>
-<!-- <a href="" class="btn btn-primary">Simpan Invoice</a> -->
+<br><br>
+Pembayaran dapat ditransfer melalui rekening: <br>
+Mandiri <br>
+09876546 a/n. Senimatul Umroh<br><br>
+BCA <br>
+98788775 a/n. Senimatul Umroh <br><br>
+<sup>Harap cetak bukti pemesanan agar nomor pesanan Anda tidak hilang</sup><br>
 <a id="print" class="btn btn-small btn-primary" href="" title="Print">
     <span class="fa fa-print"> Print</span>
 </a>

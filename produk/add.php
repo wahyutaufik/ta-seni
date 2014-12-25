@@ -1,9 +1,12 @@
 <?php 
-	$sql = "SELECT * FROM kategori";
-	$datas = mysql_query($sql);
-	while ($data = mysql_fetch_assoc($datas)) {
-		$kat[] = $data;
-	}
+$sql = "SELECT * FROM kategori";
+$datas = mysql_query($sql);
+while ($data = mysql_fetch_assoc($datas)) {
+	$kat[] = $data;
+}
+if (empty($_SESSION)||$_SESSION['sesi']!='admin') {
+	header('Location:index.php?module=home&message=login');
+}
 ?>
 <form action="index.php?module=simpan" method="POST" enctype="multipart/form-data">
 	<input type="hidden" name="id" value="">
@@ -28,6 +31,10 @@
 	<div class="form-group">
 		<label>Keterangan</label>
 		<textarea name="description" placeholder="Keterangan" class="form-control"></textarea>
+	</div>
+	<div class="form-group">
+		<label>Stok</label>
+		<input type="number" name="stok" placeholder="Stok" autocomplete="off" class="form-control">
 		<input type="hidden" name="created_time" value="<?php echo date('Y-m-d h:i:s') ?>">
 	</div>
 	<div class="form-group">

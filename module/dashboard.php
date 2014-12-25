@@ -1,3 +1,8 @@
+<?php  
+if (empty($_SESSION)||$_SESSION['sesi']!='admin') {
+	header('Location:index.php?module=home&message=login');
+}
+?>
 <div class="menu-navigator">
 	<legend class="dashboard">Sites Administrator</legend>
 	<div class="container">
@@ -41,6 +46,12 @@
 				</a>
 			</div>
 			<div class="col-md-2" align="center">
+				<a href="index.php?module=listOngkir">
+					<img src="layout/images/file-cabinet-icon.png">
+					<p class="dashboard">Ongkos Kirim</p>
+				</a>
+			</div>
+			<div class="col-md-2" align="center">
 				<a href="index.php?module=listProduk">
 					<img src="layout/images/price-tag-icon.png">
 					<p class="dashboard">Produk</p>
@@ -53,7 +64,7 @@
 				</a>
 			</div>
 			<div class="col-md-2" align="center">
-				<a href="index.php?module=listPembayaran">
+				<a href="index.php?module=listKonfirmasi">
 					<img src="layout/images/visa-icon.png">
 					<p class="dashboard">Konfirmasi</p>
 				</a>

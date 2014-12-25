@@ -1,5 +1,8 @@
 <?php 
 require_once "config/get_data.php";
+if (empty($_SESSION)||$_SESSION['sesi']!='admin') {
+	header('Location:index.php?module=home&message=login');
+}
 ?>
 <?php foreach ($datas as $key => $s): ?>
 	<form action="index.php?module=update" method="POST" enctype="multipart/form-data">

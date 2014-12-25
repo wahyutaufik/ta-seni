@@ -24,6 +24,10 @@ while ($data = mysql_fetch_assoc($result)) {
 					</div>
 					<div class="col-md-8">
 						<?php echo $p['description']; ?>
+						<br>
+						<b>Stok : <?php echo $p['stok'] ?></b>
+						<br>
+						<b>Harga : <?php echo $p['price'] ?></b>
 						<div>
 							<a class="btn btn-success" href="javascript:history.back()">Kembali</a>
 							<a class="btn btn-success" href="input.php?input=add&id=<?php echo $id; ?>">Order</a>

@@ -8,9 +8,13 @@ switch($modul)
 {
 	/*--module--*/
 	case 'home'                       : include 'module/home.php'; break;
-	case 'detailsProduk'               : include 'module/details.php'; break;
-	case 'cart'               : include 'module/cart.php'; break;
-	case 'order'               : include 'module/order.php'; break;
+	case 'detailsProduk'              : include 'module/details.php'; break;
+	case 'cart'                       : include 'module/cart.php'; break;
+	case 'updateCart'                 : include 'module/updateCart.php'; break;
+	case 'order'                      : include 'module/order.php'; break;
+	case 'conf'                       : include 'module/konfirmasi.php'; break;
+	case 'post-conf'                  : include 'module/post-conf.php'; break;
+	case 'conf_pdf'                   : include 'module/struk.php'; break;
 	case 'login'                      : include 'module/login.php'; break;
 	case 'cek_login'                  : include 'module/cek_login.php'; break;
 	case 'login_admin'                : include 'module/login_admin.php'; break;
@@ -19,7 +23,7 @@ switch($modul)
 	case 'cek_login_admin'            : include 'module/cek_login_admin.php'; break;
 	case 'register'                   : include 'module/register.php'; break;
 	case 'contact_us'                 : include 'module/contact.php'; break;
-	case 'post-contact'                 : include 'module/post-contact.php'; break;
+	case 'post-contact'               : include 'module/post-contact.php'; break;
 	case 'produk'                     : include 'module/products.php'; break;
 	case 'tentang'                    : include 'module/about.php'; break;
 	case 'dashboard'                  : include 'module/dashboard.php'; break;
@@ -51,10 +55,19 @@ switch($modul)
 	case 'addKategori'                : include 'kategori/add.php'; break;
 	case 'detailKategori'             : include 'kategori/detail.php'; break;
 	case 'updateKategori'             : include 'kategori/update.php'; break;
-
+	
 	/*-----tentang-----*/
-	case 'detailTentang'             : include 'tentang/detail.php'; break;
-	case 'updateTentang'             : include 'tentang/update.php'; break;
-
-	case 'conf_pdf'             : include 'module/struk.php'; break;
+	case 'detailTentang'              : include 'tentang/detail.php'; break;
+	case 'updateTentang'              : include 'tentang/update.php'; break;
+	
+	/*-----pesanan-----*/
+	case 'detailPesanan'              : include 'pesanan/detail.php'; break;
+	
+	/*-----konfirmasi-----*/
+	case 'detailKonfirmasi'           : include 'konfirmasi/detail.php'; break;
+	
+	/*-----ongkir-----*/
+	case 'addOngkir'                  : include 'ongkir/add.php'; break;
+	case 'detailOngkir'               : include 'ongkir/detail.php'; break;
+	case 'updateOngkir'               : include 'ongkir/update.php'; break;
 }

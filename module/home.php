@@ -1,6 +1,6 @@
 <?php 
 require_once "slider.php"; 
-$query = "SELECT* FROM produk ORDER BY created_time DESC LIMIT 3";
+$query = "SELECT* FROM produk WHERE stok !=0 ORDER BY created_time ASC LIMIT 3";
 $result = mysql_query($query);
 while ($data = mysql_fetch_assoc($result)) {
 	$newer[] = $data;

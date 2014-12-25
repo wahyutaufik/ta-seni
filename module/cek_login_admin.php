@@ -12,6 +12,7 @@ $jumlahdata = mysql_num_rows($login);
 
 if($jumlahdata > 0){
 	$_SESSION['username'] = $data['username'];
+	$_SESSION['sesi']     = 'admin';
     header("Location:index.php?module=dashboard&message=admin-success");
 } else {
     header("Location:index.php?module=login_admin&message=failed");

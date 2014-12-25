@@ -7,16 +7,12 @@ if (empty($_SESSION)||$_SESSION['sesi']!='admin') {
 	<input type="hidden" name="id" value="">
 	<input type="hidden" name="module" value="<?php echo $modulecase ?>">
 	<div class="form-group">
-    	<label>USERNAME</label>
-    	<input name="username" type="text" class="form-control" required>
+    	<label>Provinsi*</label>
+    	<input name="provinsi" type="text" class="form-control" required>
     </div>
     <div class="form-group">
-    	<label>PASSWORD</label>
-    	<input name="password" type="password" class="form-control" required>
-    </div>
-    <div class="form-group">
-    	<label>RE-TYPE PASSWORD</label>
-    	<input name="re-password" type="password" class="form-control" required>
+    	<label>Harga*</label>
+    	<input name="harga" type="number" class="form-control" required>
     </div>
     <div>
 		<input type="submit" class="btn btn-primary" value="Simpan" id="register-submit">

@@ -5,6 +5,9 @@ $kats       = mysql_query($sql);
 while ($cats = mysql_fetch_assoc($kats)) {
 	$kat[] = $cats;
 }
+if (empty($_SESSION)||$_SESSION['sesi']!='admin') {
+	header('Location:index.php?module=home&message=login');
+}
 ?>
 <?php foreach ($datas as $key => $s): ?>
 	<form action="index.php?module=update" method="POST" enctype="multipart/form-data">
@@ -33,6 +36,10 @@ while ($cats = mysql_fetch_assoc($kats)) {
 			<label>Keterangan</label>
 			<textarea name="description" class="form-control"><?php echo $s['description'] ?></textarea>
 			<input type="hidden" name="created_time" value="<?php echo date('Y-m-d h:i:s') ?>">
+		</div>
+		<div class="form-group">
+			<label>Stok</label>
+			<input type="number" name="stok" value="<?php echo $s['stok'] ?>" placeholder="Stok" autocomplete="off" class="form-control">
 		</div>
 		<div class="form-group">
 			<label>Gambar</label>

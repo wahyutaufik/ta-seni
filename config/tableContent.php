@@ -1,7 +1,9 @@
 <?php  
 $table  = substr(strstr(strtolower(preg_replace('/\B([A-Z])/', ' $1', $module)), " "), 1);
 $result = mysql_query("SELECT * FROM $table");
-
+if ($_GET['module'] == 'listPesanan') {
+   $result     = mysql_query("SELECT * FROM $table GROUP BY invoice_no");
+}
 if (!$result) {
     echo 'Tidak bisa menjalankan Query, ' . mysql_error().'. </br>';
 }

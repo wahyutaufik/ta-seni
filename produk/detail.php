@@ -1,5 +1,8 @@
 <?php  
 require_once "config/get_data.php";
+if (empty($_SESSION)||$_SESSION['sesi']!='admin') {
+	header('Location:index.php?module=home&message=login');
+}
 ?>
 <?php foreach ($datas as $key => $s): ?>
 	<div class="form-group">
@@ -17,6 +20,10 @@ require_once "config/get_data.php";
 	<div class="form-group">
 		<label>Keterangan :</label>
 		<?php echo $s['description'] ?>
+	</div>
+	<div class="form-group">
+		<label>Stok :</label>
+		<?php echo $s['stok'] ?>
 	</div>
 	<div class="form-group">
 		<label>Gambar :</label>

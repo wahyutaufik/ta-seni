@@ -1,8 +1,7 @@
 <?php 
 $id = $_GET['id'];
-$query = mysql_query("SELECT * FROM admin WHERE id='$id'");
+$query = mysql_query("SELECT * FROM ongkir WHERE id='$id'");
 $data = mysql_fetch_array($query);
-$password = base64_decode($data['password']);
 if (empty($_SESSION)||$_SESSION['sesi']!='admin') {
     header('Location:index.php?module=home&message=login');
 }
@@ -12,16 +11,12 @@ if (empty($_SESSION)||$_SESSION['sesi']!='admin') {
 	<input type="hidden" name="id" value="<?php echo $id ?>">
 	<input type="hidden" name="module" value="<?php echo $modulecase ?>">
 	<div class="row-fluid">
-    	<label>USERNAME</label>
-    	<input name="username" class="form-control" type="text" value="<?php echo $data['username'] ?>" required>
+    	<label>Provinsi</label>
+    	<input name="provinsi" class="form-control" type="text" value="<?php echo $data['provinsi'] ?>" required>
     </div>
     <div class="row-fluid">
-    	<label>PASSWORD</label>
-    	<input name="password" class="form-control" type="password" value="<?php echo $password; ?>" required>
-    </div>
-    <div class="form-group">
-    	<label>RE-TYPE PASSWORD</label>
-    	<input name="re-password" type="password" class="form-control" value="<?php echo $password; ?>" required>
+    	<label>Harga</label>
+    	<input name="harga" class="form-control" type="number" value="<?php echo $data['harga'] ?>" required>
     </div>
     <div>
 		<input class="btn btn-primary" type="submit" value="Simpan">

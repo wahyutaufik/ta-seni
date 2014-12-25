@@ -1,8 +1,12 @@
 <?php  
 $kategori = $_GET['kategori'];
-$query = "SELECT * FROM produk";
+$q        = $_GET['q'];
+$query = "SELECT * FROM produk WHERE stok !=0";
 if ($kategori) {
-	$query = "SELECT * FROM produk WHERE category LIKE '%$kategori%' ";
+	$query = "SELECT * FROM produk WHERE category LIKE '%$kategori%' AND stok !=0";
+}
+if ($q) {
+	$query = "SELECT * FROM produk WHERE name LIKE '%$q%' AND stok !=0";
 }
 $result = mysql_query($query);
 while ($data = mysql_fetch_assoc($result)) {

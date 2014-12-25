@@ -1,3 +1,8 @@
+<?php  
+if (empty($_SESSION)||$_SESSION['sesi']!='admin') {
+	header('Location:index.php?module=home&message=login');
+}
+?>
 <form action="index.php?module=simpan" method="POST" enctype="multipart/form-data">
 	<input type="hidden" name="id" value="">
 	<input type="hidden" name="module" value="<?php echo $modulecase ?>">

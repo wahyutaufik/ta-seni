@@ -1,7 +1,10 @@
 <?php 
 require_once "config/tableHeader.php"; 
 require_once "config/tableContent.php";
-$url = substr(strstr(strtolower(preg_replace('/\B([A-Z])/', ' $1', $module)), " "), 1); 
+$url = substr(strstr(strtolower(preg_replace('/\B([A-Z])/', ' $1', $module)), " "), 1);
+if (empty($_SESSION)||$_SESSION['sesi']!='admin') {
+	header('Location:index.php?module=home&message=login');
+} 
 ?>
 
 <style type="text/css">
